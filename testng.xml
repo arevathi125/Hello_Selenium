@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+	<test thread-count="5" name="test1"></test>
+	<test thread-count="5" name="test">
+	<groups>
+	<run>
+	<include name="smoke"></include>
+	<include name="sanity"></include>
+	</run>
+	</groups>
+
+		<classes>
+			<class name="testNG_OrderOfExecution.AllAnnotations" />
+			<class name="testNG_OrderOfExecution.Test1" />
+			<methods>
+				<include name="test001"></include>
+				<include name="test002"></include>
+				<exclude name="test003"></exclude>
+			</methods>
+			<class name="testNG_OrderOfExecution.Test2" />
+			<methods>
+				<include name="test004"></include>
+				<exclude name="test005"></exclude>
+				<include name="test006"></include>
+			</methods>
+</classes>
+
+		
+
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
